@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+	<div class="five columns">
+		<div class="panel radius">
+			<form action="/login/" method="post" >
+				{% csrf_token %}
+				<div class="row">
+					<div class="three columns {% if error %}error{% endif %}">
+						<input type="text" placeholder="User" class="eight" name="username" autofocus/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="three columns {% if error %}error{% endif %}">
+						<input type="password" placeholder="Password" class="eight" name="password" />
+					</div>
+					<input type="submit" class="button" value="Login" />
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock content %}
